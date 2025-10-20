@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .section-hidden {
+            display: none;
+        }
+        .card-transform {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-transform:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .btn-accent {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-accent:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F5F2] text-[#333]">
+
+    <div id="app" class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <header class="py-6 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-slate-800 cursor-pointer" data-nav="home">🌐 Language Hub</h1>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-600 hover:text-slate-800 font-semibold" data-nav="home">Accueil</a>
+                <a href="#" class="text-gray-600 hover:text-slate-800 font-semibold" data-nav="about">À Propos</a>
+                <a href="#" class="text-gray-600 hover:text-slate-800 font-semibold" data-nav="contact">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </header>
+        <div id="mobile-menu" class="hidden md:hidden bg-white rounded-lg shadow-lg p-4 mt-2">
+             <a href="#" class="block py-2 text-gray-600 hover:text-slate-800 font-semibold" data-nav="home">Accueil</a>
+             <a href="#" class="block py-2 text-gray-600 hover:text-slate-800 font-semibold" data-nav="about">À Propos</a>
+             <a href="#" class="block py-2 text-gray-600 hover:text-slate-800 font-semibold" data-nav="contact">Contact</a>
+        </div>
+
+
+        <main>
+            <section id="home">
+                <div class="text-center py-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Apprenez une nouvelle langue</h2>
+                    <p class="text-lg text-gray-600">Choisissez votre guide et commencez une aventure linguistique unique.</p>
+                </div>
+                <div id="language-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    </div>
+                <div class="text-center py-12">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Prochainement...</h3>
+                    <div class="flex justify-center items-center space-x-6">
+                        <div class="w-32 h-48 bg-gray-300 rounded-xl flex items-center justify-center animate-pulse">
+                            <span class="text-gray-500 text-2xl">?</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="language-detail" class="section-hidden">
+                <div class="py-8">
+                    <button class="mb-8 font-semibold text-gray-600 hover:text-slate-900" data-nav="home">
+                        &larr; Retour à la sélection
+                    </button>
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                        <div class="lg:col-span-2">
+                             <img id="lang-mascot" src="" alt="Mascotte" class="w-full h-auto object-cover rounded-2xl shadow-lg">
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h2 id="lang-title" class="text-4xl font-bold mb-4"></h2>
+                            <p id="lang-description" class="text-lg text-gray-700 mb-8"></p>
+                            
+                            <h3 class="text-2xl font-bold mb-4">Fonctionnalités Clés</h3>
+                            <ul id="lang-features" class="list-disc list-inside space-y-2 mb-8 text-gray-700">
+                                </ul>
+
+                            <h3 class="text-2xl font-bold mb-4">Aperçu de l'application</h3>
+                            <div id="lang-gallery" class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+                                </div>
+
+                            <a id="lang-cta" href="#" target="_blank" class="inline-block text-white font-bold py-4 px-8 rounded-lg text-lg btn-accent">
+                                Accéder à l'application
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section-hidden py-16">
+                 <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-6">Notre Mission</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Chez Language Hub, nous croyons que l'apprentissage d'une langue doit être une aventure passionnante et immersive. Notre mission est de créer des outils d'apprentissage engageants, portés par des personnages attachants qui vous guident et vous motivent à chaque étape. Nous combinons des méthodes pédagogiques efficaces avec un univers ludique pour rendre votre parcours aussi amusant que productif.
+                    </p>
+                </div>
+            </section>
+
+            <section id="contact" class="section-hidden py-16">
+                 <div class="max-w-xl mx-auto">
+                    <h2 class="text-4xl font-bold text-slate-800 text-center mb-8">Contactez-nous</h2>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <p class="text-center text-gray-600 mb-6">Une question ou une suggestion ? Remplissez le formulaire ci-dessous et notre équipe vous répondra rapidement.</p>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-semibold mb-2">Nom</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-slate-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-slate-800 transition-colors">Envoyer le Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center py-8 mt-16 border-t border-gray-200">
+            <p class="text-gray-500">&copy; 2025 Language Hub. Tous droits réservés.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const languagesData = [
+                {
+                    id: 'russian',
+                    name: 'Russe',
+                    flag: '🇷🇺',
+                    slogan: 'Maîtrisez l\'alphabet cyrillique et plus encore !',
+                    mascot: 'privietchan.png',
+                    description: 'Plongez dans la richesse de la langue russe avec Russian-chan comme guide. Notre application interactive vous propose des leçons structurées, des exercices de vocabulaire et des mises en situation culturelles pour un apprentissage complet et amusant.',
+                    features: [
+                        'Leçons interactives sur la grammaire.',
+                        'Exercices d\'écriture cyrillique.',
+                        'Quiz de vocabulaire thématiques.',
+                        'Immersion culturelle.'
+                    ],
+                    gallery: [
+                        'https://placehold.co/400x300/E0F2FE/3B82F6?text=App+Screen+1',
+                        'https://placehold.co/400x300/E0F2FE/3B82F6?text=App+Screen+2',
+                        'https://placehold.co/400x300/E0F2FE/3B82F6?text=App+Screen+3',
+                    ],
+                    ctaLink: 'https://privetchan-649fc.web.app/',
+                    accentColor: '#3B82F6',
+                    accentBg: 'bg-blue-500',
+                    accentHoverBg: 'hover:bg-blue-600'
+                },
+                {
+                    id: 'japanese',
+                    name: 'Japonais',
+                    flag: '🇯🇵',
+                    slogan: 'Explorez le Japon, des kanjis à la culture pop.',
+                    mascot: 'shiruchan.png',
+                    description: 'Apprenez le japonais avec Japan-chan ! De la politesse quotidienne aux expressions des animés, notre plateforme couvre tous les aspects de la langue. Apprenez à lire les hiraganas, katakanas et les kanjis essentiels à travers des jeux et des défis.',
+                    features: [
+                        'Système d\'apprentissage des kanas.',
+                        'Leçons sur les niveaux de politesse.',
+                        'Fiches de vocabulaire (JLPT N5-N4).',
+                        'Dialogues inspirés de situations réelles.'
+                    ],
+                    gallery: [
+                        'https://placehold.co/400x300/FCE7F3/EC4899?text=App+Screen+1',
+                        'https://placehold.co/400x300/FCE7F3/EC4899?text=App+Screen+2',
+                        'https://placehold.co/400x300/FCE7F3/EC4899?text=App+Screen+3',
+                    ],
+                    ctaLink: 'https://shiruchan-f66d7.web.app/',
+                    accentColor: '#EC4899',
+                    accentBg: 'bg-pink-500',
+                    accentHoverBg: 'hover:bg-pink-600'
+                },
+                {
+                    id: 'french',
+                    name: 'Français',
+                    flag: '🇫🇷',
+                    slogan: 'La langue de l\'amour et de la culture.',
+                    mascot: 'frenchan.png',
+                    description: 'Apprenez le français avec Bonjour-chan ! De la conversation de tous les jours à la littérature classique, notre application vous guide à travers les subtilités de la langue française. Parfait pour les débutants comme pour ceux qui veulent se perfectionner.',
+                    features: [
+                        'Exercices de conjugaison interactifs.',
+                        'Pratique de la prononciation.',
+                        'Vocabulaire sur la gastronomie et la culture.',
+                        'Leçons sur les expressions idiomatiques.'
+                    ],
+                    gallery: [
+                        'https://placehold.co/400x300/D1FAE5/065F46?text=App+Screen+1',
+                        'https://placehold.co/400x300/D1FAE5/065F46?text=App+Screen+2',
+                        'https://placehold.co/400x300/D1FAE5/065F46?text=App+Screen+3',
+                    ],
+                    ctaLink: '#',
+                    accentColor: 'red', // Rouge
+                    accentBg: 'bg-red-700',
+                    accentHoverBg: 'hover:bg-red-800'
+                },
+                {
+                    id: 'german',
+                    name: 'Allemand',
+                    flag: '🇩🇪',
+                    slogan: 'La langue des poètes et des penseurs.',
+                    mascot: 'germanchan.png',
+                    description: 'Apprenez l\'allemand avec German-chan ! Découvrez la structure logique de la grammaire allemande, des déclinaisons aux verbes composés. Notre méthode vous prépare à tenir des conversations, que ce soit pour le voyage ou le travail.',
+                    features: [
+                        'Maîtrise des 4 cas (nominatif, accusatif, datif, génitif).',
+                        'Exercices de construction de phrases.',
+                        'Vocabulaire pour les affaires et le tourisme.',
+                        'Pratique de la prononciation.'
+                    ],
+                    gallery: [
+                        'https://placehold.co/400x300/FEF3C7/F59E0B?text=App+Screen+1',
+                        'https://placehold.co/400x300/FEF3C7/F59E0B?text=App+Screen+2',
+                        'https://placehold.co/400x300/FEF3C7/F59E0B?text=App+Screen+3',
+                    ],
+                    ctaLink: '#',
+                    accentColor: '#F59E0B',
+                    accentBg: 'bg-amber-500',
+                    accentHoverBg: 'hover:bg-amber-600'
+                },
+                {
+                    id: 'italian',
+                    name: 'Italien',
+                    flag: '🇮🇹',
+                    slogan: 'Parlez la langue de la dolce vita.',
+                    mascot: 'italianchan.png',
+                    description: 'Ciao! Apprenez l\'italien avec Italian-chan. De la cuisine à l\'opéra, maîtrisez les expressions et la grammaire pour voyager en Italie ou simplement apprécier sa culture riche et ensoleillée.',
+                    features: [
+                        'Grammaire et conjugaison simplifiées.',
+                        'Vocabulaire de la gastronomie et du voyage.',
+                        'Pratique de la prononciation et de l\'accent.',
+                        'Dialogues de la vie quotidienne.'
+                    ],
+                    gallery: [
+                        'https://placehold.co/400x300/ECFDF5/10B981?text=App+Screen+1',
+                        'https://placehold.co/400x300/ECFDF5/10B981?text=App+Screen+2',
+                        'https://placehold.co/400x300/ECFDF5/10B981?text=App+Screen+3',
+                    ],
+                    ctaLink: '#',
+                    accentColor: '#10B981',
+                    accentBg: 'bg-emerald-500',
+                    accentHoverBg: 'hover:bg-emerald-600'
+                },
+                {
+                    id: 'english',
+                    name: 'Anglais',
+                    flag: '🇬🇧',
+                    slogan: 'La langue globale pour le travail et le voyage.',
+                    mascot: 'englishchan.png',
+                    description: 'Hello! Apprenez l\'anglais avec English-chan. Que ce soit pour des raisons professionnelles, pour voyager ou pour consommer des médias, notre application vous rendra "fluent" en un rien de temps (British & American English).',
+                    features: [
+                        'Différences entre l\'anglais UK et US.',
+                        'Exercices de "listening" et "speaking".',
+                        'Vocabulaire des affaires (Business English).',
+                        'Préparation aux tests (TOEFL/IELTS).'
+                    ],
+                    gallery: [
+                        'https://placehold.co/400x300/EEF2FF/6366F1?text=App+Screen+1',
+                        'https://placehold.co/400x300/EEF2FF/6366F1?text=App+Screen+2',
+                        'https://placehold.co/400x300/EEF2FF/6366F1?text=App+Screen+3',
+                    ],
+                    ctaLink: '#',
+                    accentColor: '#6366F1',
+                    accentBg: 'bg-indigo-500',
+                    accentHoverBg: 'hover:bg-indigo-600'
+                }
+            ];
+
+            const languageGrid = document.getElementById('language-grid');
+            const sections = document.querySelectorAll('main > section');
+
+            function showSection(sectionId) {
+                sections.forEach(section => {
+                    if (section.id === sectionId) {
+                        section.classList.remove('section-hidden');
+                    } else {
+                        section.classList.add('section-hidden');
+                    }
+                });
+                window.scrollTo(0, 0);
+            }
+
+            function populateLanguageDetail(lang) {
+                document.getElementById('lang-mascot').src = lang.mascot;
+                document.getElementById('lang-title').textContent = `${lang.flag} ${lang.name}`;
+                document.getElementById('lang-title').style.color = lang.accentColor;
+                document.getElementById('lang-description').textContent = lang.description;
+                
+                const featuresList = document.getElementById('lang-features');
+                featuresList.innerHTML = '';
+                lang.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+
+                const gallery = document.getElementById('lang-gallery');
+                gallery.innerHTML = '';
+                lang.gallery.forEach(imgSrc => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = 'Aperçu de l\'application';
+                    img.className = 'rounded-lg shadow-sm';
+                    gallery.appendChild(img);
+                });
+
+                const ctaButton = document.getElementById('lang-cta');
+                ctaButton.href = lang.ctaLink;
+                ctaButton.className = `inline-block text-white font-bold py-4 px-8 rounded-lg text-lg btn-accent ${lang.accentBg} ${lang.accentHoverBg}`;
+            }
+
+            function createLanguageCards() {
+                languageGrid.innerHTML = '';
+                languagesData.forEach(lang => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-2xl shadow-md overflow-hidden card-transform cursor-pointer';
+                    card.dataset.langId = lang.id;
+
+                    card.innerHTML = `
+                        <div class="h-64">
+                            <img src="${lang.mascot}" alt="Mascotte ${lang.name}" class="w-full h-auto object-cover rounded-2xl shadow-lg mt-4">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2" style="color: ${lang.accentColor};">${lang.flag} ${lang.name}</h3>
+                            
+                            <button class="w-full text-white font-bold py-3 px-6 rounded-lg btn-accent ${lang.accentBg} ${lang.accentHoverBg}">
+                                Découvrir
+                            </button>
+                        </div>
+                    `;
+                    languageGrid.appendChild(card);
+                });
+            }
+
+            document.body.addEventListener('click', (e) => {
+                const navTarget = e.target.closest('[data-nav]');
+                if (navTarget) {
+                    e.preventDefault();
+                    const sectionId = navTarget.dataset.nav;
+                    showSection(sectionId);
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+
+                const langCard = e.target.closest('[data-lang-id]');
+                if (langCard) {
+                    const langId = langCard.dataset.langId;
+                    const langData = languagesData.find(l => l.id === langId);
+                    if (langData) {
+                        populateLanguageDetail(langData);
+                        showSection('language-detail');
+                    }
+                }
+            });
+            
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            createLanguageCards();
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
