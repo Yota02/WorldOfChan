@@ -152,28 +152,6 @@
 
             const languagesData = [
                 {
-                    id: 'russian',
-                    name: 'Russe',
-                    flag: '🇷🇺',
-                    slogan: 'Maîtrisez l\'alphabet cyrillique et plus encore !',
-                    mascot: 'privietchan.png',
-                    description: 'Plongez dans la richesse de la langue russe avec Russian-chan comme guide. Notre application interactive vous propose des leçons structurées, des exercices de vocabulaire et des mises en situation culturelles pour un apprentissage complet et amusant.',
-                    features: [
-                        'Leçons interactives sur la grammaire.',
-                        'Exercices d\'écriture cyrillique.',
-                        'Quiz de vocabulaire thématiques.',
-                        'Immersion culturelle.'
-                    ],
-                    gallery: [
-                        'privetchan-liste.png',
-                        'privetchan-quiz.png',
-                    ],
-                    ctaLink: 'https://privetchan-649fc.web.app/',
-                    accentColor: '#3B82F6',
-                    accentBg: 'bg-blue-500',
-                    accentHoverBg: 'hover:bg-blue-600'
-                },
-                {
                     id: 'japanese',
                     name: 'Japonais',
                     flag: '🇯🇵',
@@ -189,10 +167,53 @@
                         'shiruchan-liste.png',
                         'shiruchan-quiz.png',
                     ],
-                    ctaLink: 'https.shiruchan-f66d7.web.app/',
+                    ctaLink: 'https://shiruchan-f66d7.web.app/',
                     accentColor: '#EC4899',
                     accentBg: 'bg-pink-500',
                     accentHoverBg: 'hover:bg-pink-600'
+                },
+                {
+                    id: 'korean',
+                    name: 'Coréen',
+                    flag: '🇰🇷',
+                    slogan: 'Explorez la Corée, des hanguls à la K-pop.',
+                    mascot: 'koreanchan.png',
+                    description: 'Apprenez le coréen avec Korean-chan ! De la politesse quotidienne aux expressions de la K-pop, notre plateforme couvre tous les aspects de la langue. Apprenez à lire les hanguls et les caractères essentiels à travers des jeux et des défis.',
+                    features: [
+                        'Système d\'apprentissage des hanguls.',
+                        'Fiches de vocabulaire (TOPIK Niveau 1-2).',
+                        'Dialogues inspirés de situations réelles.'
+                    ],
+                    gallery: [
+                        'koreanchan-liste.png',
+                        'koreanchan-quiz.png',
+                    ],
+                    ctaLink: 'https://koreanchan.web.app/',
+                    accentColor: '#10B981',
+                    accentBg: 'bg-emerald-500',
+                    accentHoverBg: 'hover:bg-emerald-600'
+                },
+                {
+                    id: 'chinese',
+                    name: 'Chinois',
+                    flag: '🇨🇳',
+                    slogan: 'Maîtrisez les caractères et la culture chinoise.',
+                    mascot: 'chinesechan.png',
+                    description: 'Ni hao! Apprenez le chinois avec Chinese-chan. De la prononciation des tons aux idéogrammes essentiels, notre application vous guide à travers les niveaux HSK pour une immersion complète dans la langue et la culture chinoise.',
+                    features: [
+                        'Apprentissage des caractères (hanzi).',
+                        'Exercices de prononciation et de tons.',
+                        'Vocabulaire HSK et dialogues quotidiens.',
+                        'Immersion culturelle et historique.'
+                    ],
+                    gallery: [
+                        '',
+                        '',
+                    ],
+                    ctaLink: '#',
+                    accentColor: '#DC2626',
+                    accentBg: 'bg-red-500',
+                    accentHoverBg: 'hover:bg-red-600'
                 },
                 {
                     id: 'french',
@@ -238,6 +259,27 @@
                     accentHoverBg: 'hover:bg-amber-600'
                 },
                 {
+                    id: 'english',
+                    name: 'Anglais',
+                    flag: '🇬🇧',
+                    slogan: 'La langue globale pour le travail et le voyage.',
+                    mascot: 'englishchan.png',
+                    description: 'Hello! Apprenez l\'anglais avec English-chan. Que ce soit pour des raisons professionnelles, pour voyager ou pour consommer des médias, notre application vous rendra "fluent" en un rien de temps (British & American English).',
+                    features: [
+                        'Différences entre l\'anglais UK et US.',
+                        'Exercices de "listening" et "speaking".',
+                        'Vocabulaire des affaires (Business English).'
+                    ],
+                    gallery: [
+                        '',
+                        '',
+                    ],
+                    ctaLink: '#',
+                    accentColor: '#6366F1',
+                    accentBg: 'bg-indigo-500',
+                    accentHoverBg: 'hover:bg-indigo-600'
+                } ,
+                {
                     id: 'italian',
                     name: 'Italien',
                     flag: '🇮🇹',
@@ -259,26 +301,71 @@
                     accentHoverBg: 'hover:bg-emerald-600'
                 },
                 {
-                    id: 'english',
-                    name: 'Anglais',
-                    flag: '🇬🇧',
-                    slogan: 'La langue globale pour le travail et le voyage.',
-                    mascot: 'englishchan.png',
-                    description: 'Hello! Apprenez l\'anglais avec English-chan. Que ce soit pour des raisons professionnelles, pour voyager ou pour consommer des médias, notre application vous rendra "fluent" en un rien de temps (British & American English).',
+                    id: 'spanish',
+                    name: 'Espagnol',
+                    flag: '🇪🇸',
+                    slogan: 'La langue de la passion et de la diversité.',
+                    mascot: 'spanishchan.png',
+                    description: '¡Hola! Apprenez l\'espagnol avec Spanish-chan. De la grammaire essentielle aux expressions régionales, notre application vous accompagne dans votre découverte de la langue espagnole, parfaite pour voyager en Espagne, en Amérique latine ou pour communiquer avec des millions de locuteurs.',
                     features: [
-                        'Différences entre l\'anglais UK et US.',
-                        'Exercices de "listening" et "speaking".',
-                        'Vocabulaire des affaires (Business English).'
+                        'Leçons de grammaire interactive.',
+                        'Vocabulaire pour le voyage et la culture.',
+                        'Exercices de prononciation et d\'accent.',
+                        'Dialogues quotidiens et immersion culturelle.'
                     ],
                     gallery: [
                         '',
                         '',
                     ],
                     ctaLink: '#',
-                    accentColor: '#6366F1',
-                    accentBg: 'bg-indigo-500',
-                    accentHoverBg: 'hover:bg-indigo-600'
-                }
+                    accentColor: '#EA580C',
+                    accentBg: 'bg-orange-500',
+                    accentHoverBg: 'hover:bg-orange-600'
+                },
+                {
+                    id: 'portuguese',
+                    name: 'Portugais',
+                    flag: '🇵🇹',
+                    slogan: 'La langue de la saudade et de l\'aventure.',
+                    mascot: 'portugachan.png',
+                    description: 'Olá! Apprenez le portugais avec Portuguese-chan. De la grammaire aux expressions culturelles, notre application vous guide à travers la langue portugaise, idéale pour voyager au Portugal, au Brésil ou pour découvrir la littérature lusophone.',
+                    features: [
+                        'Leçons de grammaire et conjugaison.',
+                        'Vocabulaire pour le voyage et la gastronomie.',
+                        'Exercices de prononciation et d\'accent.',
+                        'Immersion dans la culture portugaise et brésilienne.'
+                    ],
+                    gallery: [
+                        '',
+                        '',
+                    ],
+                    ctaLink: '#',
+                    accentColor: '#059669',
+                    accentBg: 'bg-emerald-600',
+                    accentHoverBg: 'hover:bg-emerald-700'
+                },
+                {
+                    id: 'russian',
+                    name: 'Russe',
+                    flag: '🇷🇺',
+                    slogan: 'Maîtrisez l\'alphabet cyrillique et plus encore !',
+                    mascot: 'privietchan.png',
+                    description: 'Plongez dans la richesse de la langue russe avec Russian-chan comme guide. Notre application interactive vous propose des leçons structurées, des exercices de vocabulaire et des mises en situation culturelles pour un apprentissage complet et amusant.',
+                    features: [
+                        'Leçons interactives sur la grammaire.',
+                        'Exercices d\'écriture cyrillique.',
+                        'Quiz de vocabulaire thématiques.',
+                        'Immersion culturelle.'
+                    ],
+                    gallery: [
+                        'privetchan-liste.png',
+                        'privetchan-quiz.png',
+                    ],
+                    ctaLink: 'https://privetchan-649fc.web.app/',
+                    accentColor: '#3B82F6',
+                    accentBg: 'bg-blue-500',
+                    accentHoverBg: 'hover:bg-blue-600'
+                },
             ];
 
             const languageGrid = document.getElementById('language-grid');
